@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Run Odoo",
+            "type": "debugpy",
+            "request": "launch",
+            "stopOnEntry": false,
+            "console": "integratedTerminal",
+            "python": "/Users/saefusalman/odoo14/bin/python", //Lokasi File Python
+            "program": "/Users/saefusalman/odoo-14.0/odoo-bin", // Lokasi File Odoo / odoo-bin
+            "args": [
+                "--config=/Users/saefusalman/odoo-14.0/conf/kat.conf -u booking_order_saefu_salman",
+                //"--database="
+            ]
+        }
+    ]
+}

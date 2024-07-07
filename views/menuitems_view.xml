@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <!-- Define Actions First -->
+        <record id="action_booking_order" model="ir.actions.act_window">
+            <field name="name">Booking Orders</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="domain">[('is_booking_order','=',True)]</field> -->
+        </record>
+
+        <record id="action_work_order" model="ir.actions.act_window">
+            <field name="name">Work Orders</field>
+            <field name="res_model">work.order</field>
+            <field name="view_mode">tree,form,kanban,calendar,pivot,graph</field>
+        </record>
+
+        <record id="action_service_team" model="ir.actions.act_window">
+            <field name="name">Service Teams</field>
+            <field name="res_model">service.team</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Define Menu Items -->
+        <menuitem id="menu_booking_root" name="Booking" sequence="10"/>
+        <menuitem id="menu_booking" name="Booking" sequence="10" parent="menu_booking_root"/>
+        <menuitem id="menu_booking_order" name="Booking Orders" sequence="10" parent="menu_booking" action="action_booking_order"/>
+        <menuitem id="menu_work_order" name="Work Orders" sequence="20" parent="menu_booking" action="action_work_order"/>
+        <menuitem id="menu_service_team" name="Service Teams" sequence="30" parent="menu_booking" action="action_service_team"/>
+    </data>
+</odoo>

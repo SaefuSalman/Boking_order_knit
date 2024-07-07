@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+    
+        <record id="view_sale_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form.booking</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_work_order" type="object" class="oe_stat_button" icon="fas fa-users">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_text">Work</span>
+                        <span class="o_stat_text">Order</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm']" position="after">
+                <button string="Check" name="check_team_availability" type="object" class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//sheet/group[@name='sale_header']" position="inside">
+                <group>
+                    <field name="is_booking_order" invisible="1"/>
+                    <field name="service_team_id"/>
+                    <field name="team_leader_id"/>
+                </group>
+                <group>
+                    <field name="team_member_ids" widget="many2many_tags"/>
+                    <field name="booking_start"/>
+                    <field name="booking_end"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    
+    </data>
+    
+    
+</odoo>
